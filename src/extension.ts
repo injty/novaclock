@@ -8,11 +8,11 @@ export function activate(context: vscode.ExtensionContext) {
     100,
   );
   statusBar.tooltip = 'Нажмите, чтобы настроить часы';
-  statusBar.command = 'vscodeClock.configure';
+  statusBar.command = 'novaclock.configure';
   statusBar.show();
 
   const getSettings = () => {
-    const config = vscode.workspace.getConfiguration('vscodeClock');
+    const config = vscode.workspace.getConfiguration('novaclock');
     const settings = config.get<any>('settings', {});
     return {
       use24HourFormat: settings.use24HourFormat ?? true,
@@ -65,15 +65,15 @@ export function activate(context: vscode.ExtensionContext) {
   startClock();
 
   vscode.workspace.onDidChangeConfiguration((e) => {
-    if (e.affectsConfiguration('vscodeClock.settings')) {
+    if (e.affectsConfiguration('novaclock.settings')) {
       startClock();
     }
   });
 
   const configureClockCommand = vscode.commands.registerCommand(
-    'vscodeClock.configure',
+    'novaclock.configure',
     async () => {
-      const config = vscode.workspace.getConfiguration('vscodeClock');
+      const config = vscode.workspace.getConfiguration('novaclock');
       const settings = config.get<any>('settings', {});
 
       const choice = await vscode.window.showQuickPick(

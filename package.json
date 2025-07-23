@@ -5,7 +5,7 @@
   "icon": "src/vscode-statusbar-clock.png",
   "version": "0.0.1",
   "engines": {
-    "vscode": "1.80.0"
+    "vscode": "^1.80.0"
   },
   "activationEvents": [
     "onStartupFinished"
@@ -66,12 +66,13 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "tsc -p ./"
+    "vscode:prepublish": "tsc -p ./",
+    "local": "npx vsce package; code --install-extension novaclock-0.0.1.vsix"
   },
   "devDependencies": {
-    "@types/node": "24.1.0",
-    "@types/vscode": "1.80.0",
-    "typescript": "5.0.0",
-    "vsce": "2.15.0"
+    "@types/node": "^24.1.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0",
+    "vsce": "^2.15.0"
   }
 }

@@ -7,10 +7,10 @@ function activate(context) {
     let interval;
     const statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
     statusBar.tooltip = 'Нажмите, чтобы настроить часы';
-    statusBar.command = 'vscodeClock.configure';
+    statusBar.command = 'novaclock.configure';
     statusBar.show();
     const getSettings = () => {
-        const config = vscode.workspace.getConfiguration('vscodeClock');
+        const config = vscode.workspace.getConfiguration('novaclock');
         const settings = config.get('settings', {});
         return {
             use24HourFormat: settings.use24HourFormat ?? true,
@@ -50,12 +50,12 @@ function activate(context) {
     };
     startClock();
     vscode.workspace.onDidChangeConfiguration((e) => {
-        if (e.affectsConfiguration('vscodeClock.settings')) {
+        if (e.affectsConfiguration('novaclock.settings')) {
             startClock();
         }
     });
-    const configureClockCommand = vscode.commands.registerCommand('vscodeClock.configure', async () => {
-        const config = vscode.workspace.getConfiguration('vscodeClock');
+    const configureClockCommand = vscode.commands.registerCommand('novaclock.configure', async () => {
+        const config = vscode.workspace.getConfiguration('novaclock');
         const settings = config.get('settings', {});
         const choice = await vscode.window.showQuickPick([
             'Переключить 12/24 формат',
