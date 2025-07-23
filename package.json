@@ -1,0 +1,77 @@
+{
+  "name": "novaclock",
+  "displayName": "novaclock",
+  "description": "Display current time on statusbar",
+  "icon": "src/vscode-statusbar-clock.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "1.80.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "publisher": "injty",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/injty/novaclock"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "novaclock.configure",
+        "title": "🕒 novaclock: Настроить часы"
+      }
+    ],
+    "configuration": {
+      "title": "novaclock",
+      "properties": {
+        "novaclock.settings": {
+          "type": "object",
+          "default": {
+            "use24HourFormat": true,
+            "locale": "default",
+            "icon": "🌇",
+            "textColor": "#b5ada0",
+            "showSeconds": true
+          },
+          "description": "Все настройки отображения часов",
+          "properties": {
+            "use24HourFormat": {
+              "type": "boolean",
+              "description": "Использовать 24-часовой формат времени"
+            },
+            "locale": {
+              "type": "string",
+              "description": "Локаль отображения времени (например, 'ru-RU', 'en-US')"
+            },
+            "icon": {
+              "type": "string",
+              "description": "Эмодзи/иконка, отображаемая рядом со временем"
+            },
+            "textColor": {
+              "type": "string",
+              "description": "Цвет текста времени в строке состояния"
+            },
+            "showSeconds": {
+              "type": "boolean",
+              "description": "Показывать секунды в часах"
+            }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "24.1.0",
+    "@types/vscode": "1.80.0",
+    "typescript": "5.0.0",
+    "vsce": "2.15.0"
+  }
+}
