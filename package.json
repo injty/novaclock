@@ -2,8 +2,8 @@
   "name": "novaclock",
   "displayName": "novaclock",
   "description": "Display current time on statusbar",
-  "icon": "src/vscode-statusbar-clock.png",
-  "version": "0.0.1",
+  "icon": "images/logo.png",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.80.0"
   },
