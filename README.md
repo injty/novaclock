@@ -4,22 +4,18 @@
 
 <p align="center">
 
-### <i>NOVASOLARIZED</i>
+### <i>NOVACLOCK</i>
 
-<i>Display current time on statusbar.</i>
+<i>Display current time on statusbar with Pomodoro timer functionality.</i>
 
 </p>
 
 </div>
 
-<i>dark colorscheme for vscode based on:
-[Solarized](https://ethanschoonover.com/solarized) and [NeoSolarized](https://github.com/overcache/NeoSolarized).
-</i>
-
-#### <i>License</i>
+#### <i>License:</i>
 
 <i>[MIT License](LICENSE)</i>
 
 #### <i>More Extentions:</i>
 
-<i>You can also check: [NovaSolarized](https://marketplace.visualstudio.com/items?itemName=injty.novasolarized) and [NovaClock](https://marketplace.visualstudio.com/items?itemName=injty.novaclock).</i>
+<i>You can also check: [NovaSolarized](https://marketplace.visualstudio.com/items?itemName=injty.novasolarized) and [NovaQuick](https://marketplace.visualstudio.com/items?itemName=injty.novaquick).</i>

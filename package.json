@@ -1,7 +1,7 @@
 {
   "name": "novaclock",
-  "displayName": "novaclock",
-  "description": "Display current time on statusbar",
+  "displayName": "NovaClock",
+  "description": "Display current time on statusbar with Pomodoro timer functionality",
   "icon": "images/logo.png",
   "version": "1.0.0",
   "engines": {
@@ -23,7 +23,7 @@
     "commands": [
       {
         "command": "novaclock.configure",
-        "title": "🕒 novaclock: Настроить часы"
+        "title": "🕒 NovaClock: Configure Clock"
       }
     ],
     "configuration": {
@@ -36,13 +36,17 @@
             "locale": "default",
             "icon": "🌇",
             "textColor": "#b5ada0",
-            "showSeconds": true
+            "showSeconds": true,
+            "pomodoroTime": 25,
+            "shortBreakTime": 5,
+            "longBreakTime": 15,
+            "autoStartBreak": false
           },
-          "description": "Все настройки отображения часов",
+          "description": "All settings for clock display and Pomodoro timer",
           "properties": {
             "use24HourFormat": {
               "type": "boolean",
-              "description": "Использовать 24-часовой формат времени"
+              "description": "Use 24-hour time format"
             },
             "locale": {
               "type": "string",
@@ -59,6 +63,21 @@
             "showSeconds": {
               "type": "boolean",
               "description": "Показывать секунды в часах"
+            },
+            "pomodoroTime": {
+              "type": "number",
+              "description": "Длительность периода работы Помодоро в минутах",
+              "default": 25
+            },
+            "shortBreakTime": {
+              "type": "number",
+              "description": "Длительность короткого перерыва в минутах",
+              "default": 5
+            },
+            "longBreakTime": {
+              "type": "number",
+              "description": "Длительность длинного перерыва в минутах",
+              "default": 15
             }
           }
         }
@@ -67,7 +86,7 @@
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
-    "local": "npx vsce package; code --install-extension novaclock-0.0.1.vsix"
+    "local": "npx vsce package; code --install-extension novaclock-1.0.0.vsix"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
